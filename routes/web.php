@@ -45,3 +45,6 @@ use App\Http\Controllers\FrontendController;
 Route::get('/', 
     [FrontendController::class, 'GetIndex'
 ])->name('routeTest');
+Route::get('/', 
+    [FrontendController::class, 'GetIndex'
+])->name('router2');
