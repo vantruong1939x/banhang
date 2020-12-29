@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestingController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\backend\BackEndController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,22 @@ use App\Http\Controllers\FrontendController;
 Route::get('/', 
     [FrontendController::class, 'GetIndex'
 ])->name('routeTest');
-Route::get('/', 
-    [FrontendController::class, 'GetIndex'
-])->name('router2');
+// day3
+Route::get('/contact', 
+    [FrontendController::class, 'GetContact'
+])->name('routeContact');
+Route::get('/login', 
+    [FrontendController::class, 'GetLogin'
+])->name('routeLogin');
+// backend
+// Route::group(['prefix' => 'admin'], function() {
+//     //
+// });
+Route::prefix('admin')->group(function(){
+	Route::get('/',[
+		BackEndController::class,'GetIndex'
+	]);
+});
+Route::get('/login',[
+		BackEndController::class,'GetLogin'
+	]);

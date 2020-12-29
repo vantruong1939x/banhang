@@ -12,4 +12,14 @@ class FrontendController extends Controller
     	// echo 'nội dung';
     		return view("frontend.index");
     }
+    function GetContact()
+    {
+    	// echo 'nội dung';
+    		return view("frontend.contact-us");
+    }
+    function GetLogin()
+    {
+    	// echo 'nội dung';
+    		return view("frontend.login");
+    }
 }
